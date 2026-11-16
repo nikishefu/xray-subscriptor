@@ -11,4 +11,5 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
 FROM scratch
 COPY --from=build /app/xray-subscriptor /xray-subscriptor
 
+USER 65532:65532
 ENTRYPOINT ["/xray-subscriptor"]
